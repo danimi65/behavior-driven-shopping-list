@@ -15,18 +15,19 @@ describe('shoppingListItem', () => {
   });
   it('should have a property named name', ()=>{
     newList.should.have.property('name');
-    newList.name.should.be('string');
   });
   it('should have a property named description', ()=>{
     newList.should.have.property('description');
-    newList.description.should.be('string');
   });
   it('should have a property named is_done', ()=>{
     newList.should.have.property('is_done');
-    newList.is_done.should.be('boolean');
   });
   it('should have a constructor that accepts two arguments: name and description', ()=>{
-    newList.should.have.property('name', 'description');
+    var testItem = new ShoppingListItem("newName", "newDescription");
+    testItem.should.have.property('name');
+    testItem.name.should.equal('newName');
+    testItem.should.have.property('description');
+    testItem.description.should.equal('newDescription');
   });
   it('the constructor method sets the new instances name and description properties using the arguments passed in', ()=>{
     var myList = new ShoppingListItem('Celery', 'Extra Green');
@@ -35,7 +36,7 @@ describe('shoppingListItem', () => {
   });
   it('has a method named check', ()=>{
     newList.should.have.property('check');
-    newList.render.should.be('function');
+    newList.check.should.be.a.function;
   });
   it('it should set the is_done property to true', ()=>{
     newList.check();
@@ -43,7 +44,7 @@ describe('shoppingListItem', () => {
   });
   it('has a method named uncheck', ()=>{
     newList.should.have.property('uncheck');
-    newList.render.should.be('function');
+    newList.uncheck.should.be.function;
   });
   it('it should set the is_done property to false', ()=>{
     newList.uncheck();
@@ -51,7 +52,7 @@ describe('shoppingListItem', () => {
   });
   it('has a method named render', ()=>{
     newList.has.property('render');
-    newList.render.should.be('function');
+    newList.render.should.be.function;
   });
   it('will construct and return an html formatted string', ()=>{
     newList.render();
