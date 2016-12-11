@@ -1,10 +1,10 @@
-class ShoppingList{
-  constructor(items){
-    this.items = [];
+// class ShoppingList{
+//   constructor(items){
+//     this.items = [];
 
-  }
-  addItem(item){
-    if(item === this.)
+//   }
+//   addItem(item){
+//     if(item === this.)
 
-  }
-}
+//   }
+// }
