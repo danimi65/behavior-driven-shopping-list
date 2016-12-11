@@ -3,6 +3,7 @@ const should = chai.should();
 
 describe('shoppingListItem', () => {
 
+
   let newList = new ShoppingListItem();
 
   // beforeEach(function(){
