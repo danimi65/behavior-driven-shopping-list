@@ -8,7 +8,7 @@ class ShoppingListItem {
   check(){
     return this.is_done = true;
 
-
+ 
   }
 
   uncheck(){
