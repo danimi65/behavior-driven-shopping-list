@@ -1,4 +1,4 @@
-const should = chai.should();
+// const should = chai.should();
 const expect = chai.expect();
 
 describe('shoppingList',() =>{
@@ -10,7 +10,7 @@ describe('shoppingList',() =>{
   });
 
   it('should be a class', ()=>{
-    newShoppingList.should.be.a.function
+    newShoppingList.should.be.a.function;
   });
 
   it('should have a property named items', ()=>{ newShoppingList.should.have.property('items');
@@ -31,7 +31,7 @@ describe('shoppingList',() =>{
     shoppingList.items.push('milk');
    });
    it('should throw an error', ()=>{
-    newShoppingList.addItem.should.throw(err);
+    newShoppingList.addItem.should.throw(Error);
    });
 
    it('should have a removeItem method', ()=>{
@@ -44,7 +44,7 @@ describe('shoppingList',() =>{
     newShoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
     newShoppingList.items.splice(newShoppingList.items.idexOf('butter', 1));
     it('should throw an error', ()=>{
-    newShoppingList.removeItem.should.throw(err);
+    newShoppingList.removeItem.should.throw(Error);
    });
 
     it('should have a method named render', ()=>{
