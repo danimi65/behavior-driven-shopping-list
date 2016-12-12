@@ -1,7 +1,7 @@
 const should = chai.should();
 // const expect = chai.expect();
 
-describe('shoppingListItem', () => {
+describe('ShoppingListItem', () => {
 
 
   let newList = new ShoppingListItem();
@@ -59,3 +59,5 @@ describe('shoppingListItem', () => {
     newList.render.should.be('string');
   });
 });
+
+

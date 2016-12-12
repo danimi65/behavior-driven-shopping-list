@@ -1,5 +1,3 @@
-// const should = chai.should();
-const expect = chai.expect();
 
 describe('shoppingList',() =>{
 
@@ -10,7 +8,7 @@ describe('shoppingList',() =>{
   });
 
   it('should be a class', ()=>{
-    newShoppingList.should.be.a.function;
+    ShoppingList.should.be.a.function;
   });
 
   it('should have a property named items', ()=>{ newShoppingList.should.have.property('items');
@@ -22,33 +20,40 @@ describe('shoppingList',() =>{
   });
 
    it('should have a method named addItem', ()=>{
-    expect(newShoppingList.addItem).to.be.a.function;
+    newShoppingList.addItem.should.be.a.function;
    });
 
    it('should push milk into the array', ()=>{
     newShoppingList.addItem();
-    shoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
-    shoppingList.items.push('milk');
+    newShoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
+    newShoppingList.items.push('milk');
    });
    it('should throw an error', ()=>{
     newShoppingList.addItem.should.throw(Error);
    });
 
    it('should have a removeItem method', ()=>{
-    expect(newShoppingList.removeItem).to.be.a.function;
+    newShoppingList.removeItem.should.be.a.function;
    });
 
-   it('should remove fruits from the array', ()=> {
+   it('should remove butter from the array', ()=> {
     let newShoppingList = new ShoppingList(['bread', 'butter', 'milk']);
     newShoppingList.removeItem();
     newShoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
-    newShoppingList.items.splice(newShoppingList.items.idexOf('butter', 1));
+    newShoppingList.items.splice(newShoppingList.items.indexOf('butter', 1));
+    it('should remove milk from the array', ()=>{
+      let newShoppingList = new ShoppingList(['bread', 'butter', 'milk']);
+      newShoppingList.removeItem();
+      newShoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
+      newShoppingList.items.pop();
+
+    })
     it('should throw an error', ()=>{
     newShoppingList.removeItem.should.throw(Error);
    });
 
     it('should have a method named render', ()=>{
-      expect(newShoppingList.render).to.be.a.function;
+      newShoppingList.render.should.be.a.function;
     });
 
    });

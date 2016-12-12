@@ -6,13 +6,13 @@ class ShoppingListItem {
   }
 
   check(){
-    return this.is_done = true;
+    this.is_done = true;
 
 
   }
 
   uncheck(){
-   return  this.is_done = false;
+    this.is_done = false;
 
   }
 

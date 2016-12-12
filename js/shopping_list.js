@@ -2,12 +2,12 @@ class ShoppingList{
   constructor(){
     this.items = [];
   }
-  addItem(item){
-    if(item instanceof ShoppingListItem){
-      this.items.push(item);
+  addItem(items){
+    if(items instanceof ShoppingListItem){
+      this.items.push(items);
     }
     else{
-      throw Error(`${item} is not an item.`);
+      throw Error(`${items} is not an items.`);
     }
   }
   removeItem(ShoppingListItem){
@@ -16,7 +16,7 @@ class ShoppingList{
     }if(arguments.length === 0){
       this.items.pop();
     }else{
-      throw Error(`${ShoppingListItem} is not an item.`);
+      throw Error(`${ShoppingListItem} is not an items.`);
     }
   }
   render(){
