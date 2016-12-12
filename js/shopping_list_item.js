@@ -17,16 +17,8 @@ class ShoppingListItem {
   }
 
   render(){
-    var renderHtml = '<ul>\
-      <li class = "completed_[is_done]">\
-      <span> Ice Cream</span> \
-      <span>Will melt if not consumed quickly.</span> \
-      </li> \
-      </ul>';
-
-      return renderHtml;
-
+    var renderHtml =
+    '<li class = \"completed-false>\"/<span class = \"listItemName\"' + this.name +'/</span>/<span class = \"listItemDescription\"' + this.description +'/</span></li>';
+    return renderHtml;
   }
 }
-
-
