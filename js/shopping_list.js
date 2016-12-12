@@ -20,10 +20,11 @@ class ShoppingList{
     }
   }
   render(){
-    var shoppingListHTML = [];
+    let itemHTML = [];
     for(var i = 0; i < this.items.length - 1; i++ ){
-      shoppingListHTML.push(this.items[i]);
+      let renderedItem = this.items[i].render();
+      itemHTML.push(renderedItem);
     }
-    return `<ul>${shoppingListHTML.join('')}</ul>`;
+    return `<ul>${itemHTML.join('')}</ul>`;
   }
 }
