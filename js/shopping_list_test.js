@@ -56,7 +56,7 @@ describe('shoppingList',() =>{
       newShoppingList.render.should.be.a.function;
     });
 
-   });
+   }); 
 
 
 
