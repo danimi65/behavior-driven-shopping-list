@@ -17,10 +17,8 @@ class ShoppingListItem {
   }
 
   render(){
-    var renderHtml =`<li class = "completed-false">
-      <span class = "listItemName">${this.name}</span>
-      <span class="listItemDescription">${this.description}</span>
-    </li>`;
+    var renderHtml =
+    '<li class = \"completed-false>\"/<span class = \"listItemName\"' + this.name +'/</span>/<span class = \"listItemDescription\"' + this.description +'/</span></li>';
     return renderHtml;
   }
 }
