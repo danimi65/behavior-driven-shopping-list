@@ -5,7 +5,8 @@ class ShoppingList{
   addItem(item){
     if(item instanceof ShoppingListItem){
       this.items.push(item);
-    }else{
+    }
+    else{
       throw Error(`${item} is not an item.`);
     }
   }
@@ -23,6 +24,6 @@ class ShoppingList{
     for(var i = 0; i < this.items.length - 1; i++ ){
       shoppingListHTML.push(this.items[i]);
     }
-    return `<ul>${shoppingListHTML}</ul>`;
+    return `<ul>${shoppingListHTML.join('')}</ul>`;
   }
 }
