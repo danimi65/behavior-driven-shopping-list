@@ -39,7 +39,7 @@ describe('shoppingList',() =>{
    it('should remove butter from the array', ()=> {
     let newShoppingList = new ShoppingList(['bread', 'butter', 'milk']);
     newShoppingList.removeItem();
-    newShoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
+    newShoppingList.should.be.an.instanceof.ShoppingListItem.name;
     newShoppingList.items.splice(newShoppingList.items.indexOf('butter', 1));
     it('should remove milk from the array', ()=>{
       let newShoppingList = new ShoppingList(['bread', 'butter', 'milk']);
