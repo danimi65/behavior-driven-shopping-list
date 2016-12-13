@@ -23,12 +23,18 @@ describe('ShoppingList',() =>{
     newShoppingList.addItem.should.be.a.function;
    });
 
-   it('should push milk into the array', ()=>{
-    let milkItem = new ShoppingListItem('milk', 'good for your bones');
-    newShoppingList.addItem(milkItem);
-    newShoppingList.should.contain(milkItem);
+   // it('should push milk into the array', ()=>{
+   //  let milkItem = new ShoppingListItem('milk', 'good for your bones');
+   //  newShoppingList.addItem(milkItem);
+   //  newShoppingList.should.contain(milkItem);
    //  milkItem.should.be.an.instanceof(ShoppingListItem);
-    });
+   //  });
+
+   it('should push milk into the array', ()=>{
+    var milk = new ShoppingListItem('milk', 'organic');
+    newShoppingList.addItem(milk);
+    newShoppingList.items.includes(milk).should.equal(true);
+   });
 
    it('should throw an error', ()=>{
     newShoppingList.addItem.should.throw(Error);
@@ -39,21 +45,26 @@ describe('ShoppingList',() =>{
    });
 
    it('should remove butter from the array', ()=> {
-    let breadItem = new ShoppingListItem('bread', 'goes well with butter');
+    var breadItem = new ShoppingListItem('bread', 'goes well with butter');
     newShoppingList.addItem(breadItem);
-    let butterItem = new ShoppingListItem('butter', 'oh so buttery');
+    var butterItem = new ShoppingListItem('butter', 'oh so buttery');
     newShoppingList.addItem(butterItem);
-    let cheeseItem = new ShoppingListItem('cheese', 'so yummy');
+    var cheeseItem = new ShoppingListItem('cheese', 'so yummy');
     newShoppingList.addItem(cheeseItem);
     newShoppingList.removeItem(butterItem);
+    newShoppingList.items.includes(butterItem).should.equal(false);
+   
+    // newShoppingList.items.should.not.contain(butterItem);
+    });
     
     it('should remove milk from the array', ()=>{
-      let newShoppingList = new ShoppingList(['bread', 'butter', 'milk']);
-      newShoppingList.removeItem();
-      // newShoppingList.items.should.be.an.instanceof(ShoppingListItem);
-      newShoppingList.items.pop();
-
+      var breadItem = new ShoppingListItem('bread', 'goes well with butter');
+    newShoppingList.addItem(breadItem);
+    var milkItem = new ShoppingListItem('milk', 'lani moo');
+    newShoppingList.addItem(milkItem);
+    newShoppingList.removeItem();
     });
+
     it('should throw an error', ()=>{
     newShoppingList.removeItem.should.throw(Error);
    });
@@ -62,7 +73,7 @@ describe('ShoppingList',() =>{
       newShoppingList.render.should.be.a.function;
     });
 
-   }); 
+   
 
 
 

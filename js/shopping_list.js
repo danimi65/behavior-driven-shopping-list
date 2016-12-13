@@ -11,14 +11,15 @@ class ShoppingList{
     }
   }
   removeItem(item){
-    if(item instanceof ShoppingListItem && this.items.indexOf(item) > -1){
-      this.items.splice(indexOf(item), 1);
-    }if(arguments.length === 0 && item === undefined){
+     if(item instanceof ShoppingListItem && this.items.indexOf(item) > -1){
+      this.items.splice(this.items.indexOf(item), 1);
+    }else if(arguments.length === 0){
       this.items.pop();
     }else{
-      throw Error(`${ShoppingListItem} is not an items.`);
+      throw Error('this is not an item.');
     }
   }
+
   render(){
     let itemHTML = [];
     for(var i = 0; i < this.items.length - 1; i++ ){
