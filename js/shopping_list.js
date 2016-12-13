@@ -11,8 +11,8 @@ class ShoppingList{
     }
   }
   removeItem(ShoppingListItem){
-    if(this.items.indexOf(ShoppingListItem) !== -1){
-      this.items.splice(indexOf(ShoppingListItem), 1);
+    if(this.items.indexOf(this.ShoppingListItem) !== -1){
+      this.items.splice(indexOf(this.ShoppingListItem), 1);
     }if(arguments.length === 0){
       this.items.pop();
     }else{
@@ -21,7 +21,7 @@ class ShoppingList{
   }
   render(){
     let itemHTML = [];
-    for(var i = 0; i < this.items.length - 1; i++ ){
+    for(var i = 0; i < this.items.length; i++ ){
       let renderedItem = this.items[i].render();
       itemHTML.push(renderedItem);
     }

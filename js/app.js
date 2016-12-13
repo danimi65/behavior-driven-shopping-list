@@ -14,10 +14,13 @@ content.appendChild(addListItemButton);
 addListItemButton.innerHTML = 'Add To Shopping List';
 addListItemButton.addEventListener('click', () => {
   let newItem = new ShoppingListItem(nameInput.value, descriptionInput.value);
-  myShoppingList.items.push(newItem);
-  nameInput.value = null;
-  descriptionInput.value = null;
-  shoppingListContainer.innerHTML = myShoppingList.render();
+    myShoppingList.addItem(newItem);
+    nameInput.value = null;
+    descriptionInput.value = null;
+  setTimeout(function () {
+    let shoppingList = myShoppingList.render();
+    shoppingListContainer.innerHTML = shoppingList;
+  }, 0);
 });
 
 let shoppingListContainer = document.createElement('div');
