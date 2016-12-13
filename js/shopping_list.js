@@ -2,18 +2,18 @@ class ShoppingList{
   constructor(){
     this.items = [];
   }
-  addItem(items){
-    if(items instanceof ShoppingListItem){
-      this.items.push(items);
+  addItem(item){
+    if(item instanceof ShoppingListItem){
+      this.items.push(item);
     }
     else{
       throw Error(`${items} is not an items.`);
     }
   }
-  removeItem(ShoppingListItem){
-    if(this.items.indexOf(ShoppingListItem) !== -1){
-      this.items.splice(indexOf(ShoppingListItem), 1);
-    }if(arguments.length === 0){
+  removeItem(item){
+    if(item instanceof ShoppingListItem && this.items.indexOf(item) > -1){
+      this.items.splice(indexOf(item), 1);
+    }if(arguments.length === 0 && item === undefined){
       this.items.pop();
     }else{
       throw Error(`${ShoppingListItem} is not an items.`);

@@ -13,7 +13,7 @@ let addListItemButton = document.createElement('button');
 content.appendChild(addListItemButton);
 addListItemButton.innerHTML = 'Add To Shopping List';
 addListItemButton.addEventListener('click', () => {
-  let newItem = new ShoppingListItem(nameInput.value, descriptionInput.value);
+let newItem = new ShoppingListItem(nameInput.value, descriptionInput.value);
   myShoppingList.items.push(newItem);
   nameInput.value = null;
   descriptionInput.value = null;

@@ -17,8 +17,18 @@ class ShoppingListItem {
   }
 
   render(){
-    var renderHtml =
-    '<li class = \"completed-false>\"><span class = \"listItemName\">' + this.name + '</span><span class = \"listItemDescription\">' + this.description +'</span></li>';
-    return renderHtml;
-  }
+    let shoppingListItemsHTML = document.createElement('li');
+    shoppingListItemsHTML.className = 'completed_' + this.is_done;
+
+    let nameSpan = document.createElement('span');
+    nameSpan.innerHTML = this.name;
+    shoppingListItemsHTML.appendChild(nameSpan);
+
+    let descriptionSpan = document.createElement('span');
+    descriptionSpan.innerHTML = this.description;
+    shoppingListItemsHTML.appendChild(descriptionSpan);
+
+    return shoppingListItemsHTML.outerHTML;
+
+    }
 }
