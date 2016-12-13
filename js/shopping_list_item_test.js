@@ -51,12 +51,12 @@ describe('ShoppingListItem', () => {
     newList.is_done.should.be.equal(false);
   });
   it('has a method named render', ()=>{
-    newList.has.property('render');
+    newList.should.have.property('render');
     newList.render.should.be.function;
   });
   it('will construct and return an html formatted string', ()=>{
-    newList.render();
-    newList.render.should.be('string');
+    var htmlOutput = newList.render();
+    htmlOutput.should.be.string;
   });
 });
 
