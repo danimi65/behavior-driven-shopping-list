@@ -1,3 +1,4 @@
+
 let content = document.getElementById('content');
 let myShoppingList = new ShoppingList;
 
