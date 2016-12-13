@@ -4,10 +4,12 @@ let myShoppingList = new ShoppingList;
 
 let nameInput = document.createElement('input');
 nameInput.className ='input';
+nameInput.setAttribute('placeholder', 'Name');
 content.appendChild(nameInput);
 
 let descriptionInput = document.createElement('input');
 descriptionInput.className ='input';
+descriptionInput.setAttribute('placeholder', 'Description');
 content.appendChild(descriptionInput);
 
 let addListItemButton = document.createElement('button');
