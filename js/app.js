@@ -3,12 +3,14 @@ let content = document.getElementById('content');
 let myShoppingList = new ShoppingList;
 
 let nameInput = document.createElement('input');
-nameInput.className ='input';
+nameInput.className ='nameInput';
+// nameInput.setAttribute('type', 'text');
 nameInput.setAttribute('placeholder', 'Name');
 content.appendChild(nameInput);
 
 let descriptionInput = document.createElement('input');
-descriptionInput.className ='input';
+descriptionInput.className ='descriptionInput';
+// descriptionInput.setAttribute('type', 'text');
 descriptionInput.setAttribute('placeholder', 'Description');
 content.appendChild(descriptionInput);
 
@@ -17,9 +19,9 @@ content.appendChild(addListItemButton);
 addListItemButton.innerHTML = 'Add To Shopping List';
 addListItemButton.addEventListener('click', () => {
 let newItem = new ShoppingListItem(nameInput.value, descriptionInput.value);
-  myShoppingList.items.push(newItem);
-  nameInput.value = null;
-  descriptionInput.value = null;
+  myShoppingList.addItem(newItem);
+  // nameInput.value = null;
+  // descriptionInput.value = null;
   shoppingListContainer.innerHTML = myShoppingList.render();
 });
 

@@ -22,7 +22,7 @@ class ShoppingList{
 
   render(){
     let itemHTML = [];
-    for(var i = 0; i < this.items.length - 1; i++ ){
+    for(var i = 0; i < this.items.length; i++ ){
       let renderedItem = this.items[i].render();
       itemHTML.push(renderedItem);
     }
