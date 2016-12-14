@@ -31,6 +31,9 @@ class ShoppingListItem {
     let checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.className = 'checkBox';
+    checkBox.onchange = function(){
+      changeCheckedStatus();
+    };
     shoppingListItemsHTML.appendChild(checkBox);
 
 
