@@ -2,23 +2,25 @@ class ShoppingList{
   constructor(){
     this.items = [];
   }
-  addItem(items){
-    if(items instanceof ShoppingListItem){
-      this.items.push(items);
+  addItem(item){
+    if(item instanceof ShoppingListItem){
+      this.items.push(item);
     }
     else{
       throw Error(`${items} is not an items.`);
     }
   }
-  removeItem(ShoppingListItem){
-    if(this.items.indexOf(this.ShoppingListItem) !== -1){
-      this.items.splice(indexOf(this.ShoppingListItem), 1);
-    }if(arguments.length === 0){
+
+  removeItem(item){
+     if(item instanceof ShoppingListItem && this.items.indexOf(item) > -1){
+      this.items.splice(this.items.indexOf(item), 1);
+    }else if(arguments.length === 0){
       this.items.pop();
     }else{
-      throw Error(`${ShoppingListItem} is not an items.`);
+      throw Error('this is not an item.');
     }
   }
+
   render(){
     let itemHTML = [];
     for(var i = 0; i < this.items.length; i++ ){
