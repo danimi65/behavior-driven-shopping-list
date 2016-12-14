@@ -17,9 +17,9 @@ content.appendChild(descriptionInput);
 function addToShoppingList(){
   let newItem = new ShoppingListItem(nameInput.value, descriptionInput.value);
   myShoppingList.addItem(newItem);
-  // nameInput.value = null;
-  // descriptionInput.value = null;
-  shoppingListContainer.innerHTML = myShoppingList.render();
+  nameInput.value = null;
+  descriptionInput.value = null;
+  shoppingListContainer.appendChild(myShoppingList.render());
 }
 
 let addListItemButton = document.createElement('button');
