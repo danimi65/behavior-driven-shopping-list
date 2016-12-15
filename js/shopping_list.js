@@ -16,10 +16,14 @@ class ShoppingList{
   }
 
   removeItem(item){
-    console.log('removing item', item);
      if(item instanceof ShoppingListItem && this.items.indexOf(item) > -1){
-      this.items.splice(this.items.indexOf(item), 1);
-      // remove dom, by id
+      console.log(item.id);
+      for(var i = 0; i < this.items.length; i++){
+        if (this.items[i].id === item.id){
+          this.items.splice(i, 1);
+        }
+      }
+      // // remove dom, by id
     }else if(arguments.length === 0){
       this.items.pop();
     }else{

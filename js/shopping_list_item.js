@@ -47,7 +47,9 @@ class ShoppingListItem {
     let removeButton = document.createElement('button');
     removeButton.innerHTML = "Remove";
     removeButton.addEventListener('click', () => {
-      this.removeMyElement();
+      myShoppingList.removeItem(this);
+      shoppingListContainer.myShoppingList.render();
+
     });
 
     this.element.appendChild(removeButton);
