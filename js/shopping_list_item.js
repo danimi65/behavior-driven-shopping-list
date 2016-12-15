@@ -5,7 +5,7 @@ class ShoppingListItem {
     this.is_done = false;
     this.id = `id${Date.now()}`,
 
-    this.element = null; //will be set in render()
+    this.element = null;
   }
 
   check(){
@@ -48,13 +48,10 @@ class ShoppingListItem {
     removeButton.innerHTML = "Remove";
     removeButton.addEventListener('click', () => {
       myShoppingList.removeItem(this);
-      shoppingListContainer.myShoppingList.render();
-
+      this.removeMyElement();
     });
-
     this.element.appendChild(removeButton);
 
     return this.element;
-    // return shoppingListItemsHTML.outerHTML; converting a DOM element to string form removes all listeners
   }
 }
