@@ -3,7 +3,7 @@ class ShoppingListItem {
     this.name = name;
     this.description = description;
     this.is_done = false;
-
+    this.id = `id${Date.now()}`,
 
     this.element = null; //will be set in render()
   }
@@ -21,13 +21,12 @@ class ShoppingListItem {
 
   removeMyElement(){
     this.element.remove();
-    // override in shopping list
-    // console.log('should not be here');
   }
 
   render(){
     this.element = document.createElement('li');
     this.element.className = 'completed_' + this.is_done;
+    this.element.dataset.id = this.id;
 
     let nameSpan = document.createElement('span');
     nameSpan.innerHTML = this.name + ': ';
@@ -46,11 +45,8 @@ class ShoppingListItem {
     this.element.appendChild(checkBox);
 
     let removeButton = document.createElement('button');
-    // checkBox.type = 'checkbox';
-    // checkBox.className = 'checkBox';
-    removeButton.innerHTML = "remove";
+    removeButton.innerHTML = "Remove";
     removeButton.addEventListener('click', () => {
-      console.log('clicked removeButton');
       this.removeMyElement();
     });
 
