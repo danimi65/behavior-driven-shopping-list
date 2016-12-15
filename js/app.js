@@ -21,7 +21,10 @@ function addToShoppingList(){
 let addListItemButton = document.getElementById('add_shopping_list_button');
 addListItemButton.addEventListener('click', addToShoppingList);
 
-function changeCheckStatus(idx, checkbox){
-
-
+function changeCheckedStatus(item){
+  if(item.is_done === false){
+    item.check();
+  }else if(item.is_done === true){
+    item.uncheck();
+  }
 }

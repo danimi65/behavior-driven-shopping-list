@@ -4,19 +4,15 @@ class ShoppingListItem {
     this.description = description;
     this.is_done = false;
     this.id = `id${Date.now()}`,
-
     this.element = null;
   }
 
   check(){
     this.is_done = true;
-
-
   }
 
   uncheck(){
     this.is_done = false;
-
   }
 
   removeMyElement(){
@@ -39,9 +35,9 @@ class ShoppingListItem {
     let checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.className = 'checkBox';
-    checkBox.onchange = function(){
-      changeCheckedStatus();
-    };
+    checkBox.addEventListener('click',() => {
+      changeCheckedStatus(this);
+    });
     this.element.appendChild(checkBox);
 
     let removeButton = document.createElement('button');
