@@ -19,7 +19,8 @@ function addToShoppingList(){
   myShoppingList.addItem(newItem);
   nameInput.value = null;
   descriptionInput.value = null;
-  shoppingListContainer.innerHTML = myShoppingList.render();
+  shoppingListContainer.appendChild(myShoppingList.render());
+
 }
 
 let addListItemButton = document.createElement('button');
@@ -28,6 +29,7 @@ addListItemButton.innerHTML = 'Add To Shopping List';
 addListItemButton.addEventListener('click', addToShoppingList);
 
 function changeCheckStatus(idx, checkbox){
+  
 
 }
 
