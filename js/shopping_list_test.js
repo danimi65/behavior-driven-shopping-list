@@ -45,16 +45,21 @@ describe('ShoppingList',() =>{
    });
 
    it('should remove butter from the array', ()=> {
+     var butterItem = new ShoppingListItem('butter', 'oh so buttery');
+    newShoppingList.addItem(butterItem);
     var breadItem = new ShoppingListItem('bread', 'goes well with butter');
     newShoppingList.addItem(breadItem);
-    var butterItem = new ShoppingListItem('butter', 'oh so buttery');
-    newShoppingList.addItem(butterItem);
+    // console.log(newShoppingList.items);
+   
+    // console.log(newShoppingList.items);
+    
     var cheeseItem = new ShoppingListItem('cheese', 'so yummy');
     newShoppingList.addItem(cheeseItem);
+    // console.log(newShoppingList.items);
     newShoppingList.removeItem(butterItem);
-    newShoppingList.items.includes(butterItem).should.equal(false);
-   
-    // newShoppingList.items.should.not.contain(butterItem);
+      // newShoppingList.items.includes(butterItem).should.equal(false);
+      console.log(newShoppingList);
+    newShoppingList.items.should.not.contain(butterItem);
     });
     
     it('should remove milk from the array', ()=>{
@@ -63,6 +68,7 @@ describe('ShoppingList',() =>{
     var milkItem = new ShoppingListItem('milk', 'lani moo');
     newShoppingList.addItem(milkItem);
     newShoppingList.removeItem();
+    newShoppingList.items.includes(milkItem).should.equal(false);
     });
 
     it('should throw an error', ()=>{

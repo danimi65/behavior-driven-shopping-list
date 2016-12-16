@@ -3,7 +3,7 @@ class ShoppingListItem {
     this.name = name;
     this.description = description;
     this.is_done = false;
-    this.id = `id${Date.now()}`,
+    this.id = `id${Math.random()}`,
     this.element = null;
   }
 
